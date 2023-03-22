@@ -1,0 +1,7 @@
+https://teamzep.notion.site/ZEP-Script-a629ed81be6841ed8d38411108a410f9
+
+# 생애주기
+Enter    -->        Update     -->      Exit
+onInit->            Events              onLeavePlayer->
+onJoinPlayer->      //EventListner      onDestroy
+onStart->   
