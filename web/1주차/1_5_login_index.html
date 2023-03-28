@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 구글폰트 적용 */
+        @import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+        *{
+            font-family: 'Jua', sans-serif;
+        }
+        /* box를 가운데 정렬 : width값을 주고 margin:auto; */
+        .wrap {
+            /* backround-color를 통해 box가 잘 감싸졌는지 확인 */
+            /* background-color: green; */
+            width: 300px;
+            margin: 20px auto 0px auto;
+        }
+
+        .mytitle {
+            background-color: #ddd;
+
+            width: 300px;
+            height: 200px;
+
+            border-radius: 10px;
+            color: white;
+
+            text-align: center;
+
+            padding-top: 30px;
+
+            /*  background 항상 3개가 같이 다닌다
+                background-image:url('')    
+                background-position:center; 
+                background-size:center;    
+            */
+            background-image: url('https://www.ancient-origins.net/sites/default/files/field/image/Agesilaus-II-cover.jpg');
+            background-position: center;
+            background-size: cover;
+        }
+    </style>
+</head>
+<!-- 코드 정렬 단축키 : shift+alt+f -->
+
+<body>
+    <div class="wrap">
+        <div class="mytitle">
+            <h1>로그인 페이지</h1>
+            <h5>아이디, 비밀번호를 입력하세요</h5>
+        </div>
+        <p> ID : <input type="text"></p>
+        <p> PW : <input type="text"></p>
+        <button>로그인하기</button>
+    </div>
+
+</body>
+
+</html>
