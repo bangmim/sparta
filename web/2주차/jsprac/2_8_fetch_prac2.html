@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Fetch 시작하기</title>
+    <!-- jQuery 사용 코드 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        fetch("http://spartacodingclub.shop/sparta_api/seoulair")
+            .then(res => res.json())    // json형식으로 가져오기
+            .then(data => {
+                /*
+                1. console.log(data) : 가져온 data 출력
+                
+                2. list 확인
+                3. list를 변수에 담기
+                4. forEach함수 사용해 원하는 데이터 값만 출력하기
+                */
+                let rows = data['RealtimeCityAir']['row']
+                rows.forEach((a)=>{
+                    console.log(a['MSRSTE_NM'], a['IDEX_NM'])
+                })
+
+                // console.log(data['RealtimeCityAir']['row'][0])   
+            })
+    </script>
+</head>
+
+<body>
+    <h1>Fetch 연습을 위한 페이지</h1>
+   <p>fetch : url에서 data를 가져오는 함수</p> 
+</body>
+
+</html>
