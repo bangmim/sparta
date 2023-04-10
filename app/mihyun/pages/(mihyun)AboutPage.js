@@ -1,27 +1,9 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView } from 'react-native';
-import * as Linking from 'expo-linking';
 
 const image = 'https://storage.googleapis.com/sparta-image.appspot.com/lecture/about.png'
 
-export default function AboutPage({navigation,route}) {
-
-   
-    setTimeout(()=>{
-        //헤더의 타이틀 변경
-        navigation.setOptions({
-          title:'소개페이지',
-          headerStyle: {
-            backgroundColor: 'blue',
-        },
-        headerTintColor: "#fff",
-      })
-    })
-
-    const link = () => {
-        Linking.openURL("https://mifine.tistory.com/")
-    }
-
+export default function AboutPage() {
     return (
         <View style={styles.container}>
             <View style={styles.textContainer}>
@@ -33,7 +15,7 @@ export default function AboutPage({navigation,route}) {
                 <Text style={styles.itemTextDesc}>꼭 완주 하셔서 꼭 여러분 것으로 만들어가시길 바랍니다</Text>
 
                 <TouchableOpacity style={styles.itemButton}>
-                    <Text style={styles.buttonText} onPress={()=>link()}>여러분의 블로그계정</Text>
+                    <Text style={styles.buttonText}>여러분의 인스타계정</Text>
                 </TouchableOpacity>
 
             </View>
@@ -55,18 +37,20 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         marginTop:60,
         marginBottom:30,
-        width:"100%",
+        width:"100%"
     },
     text: {
-        fontSize: 33,
+        fontSize: 35,
         color: "white",
         fontWeight: '700',
+        textAlign: "auto",
         // backgroundColor:"green",
     },
     contentItem: {
         backgroundColor: "white",
+        flex: 4,
         // width: 250,
-        height: 500,
+        // hegith: 100,
         marginBottom: 60,
         justifyContent: "center",
         // alignSelf: "center",
