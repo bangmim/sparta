@@ -8,7 +8,6 @@ import Loading from '../components/Loading';
 import { StatusBar } from 'expo-status-bar';
 import * as Location from "expo-location";
 import axios from "axios"
-import {firebase_db} from "../firebaseConfig"
 
 export default function MainPage({navigation,route}) {
   //useState 사용법
@@ -36,21 +35,11 @@ export default function MainPage({navigation,route}) {
 		//뒤의 1000 숫자는 1초를 뜻함
     //1초 뒤에 실행되는 코드들이 담겨 있는 함수
     setTimeout(()=>{
-      // .once('') : 전체 데이터 가져오기
-        firebase_db.ref('/tip').once('value')
-        .then((snapshot) => { // snapshot : 데이터를 담아올 변수
-          console.log("파이어베이스에서 데이터 가져왔습니다!!")
-          let tip = snapshot.val();
-          
-          setState(tip)
-          setCateState(tip)
-          getLocation()
-          setReady(false)
-        });
-        // getLocation()
-        // setState(data.tip)
-        // setCateState(data.tip)
-        // setReady(false)
+        //헤더의 타이틀 변경
+        getLocation()
+        setState(data.tip)
+        setCateState(data.tip)
+        setReady(false)
     },1000)
  
     
@@ -74,6 +63,7 @@ export default function MainPage({navigation,route}) {
       );
 
       console.log(result)
+      // 날씨 및 컨디션 데이터 변수에 담기
       const temp = result.data.main.temp; 
       const condition = result.data.weather[0].main
       
@@ -106,7 +96,7 @@ export default function MainPage({navigation,route}) {
   //data.json 데이터는 state에 담기므로 상태에서 꺼내옴
   // let tip = state.tip;
   let todayWeather = 10 + 17;
-  let todayCondition = "흐림"
+  let todayCondition = "흐림";
   //return 구문 밖에서는 슬래시 두개 방식으로 주석
   return ready ? <Loading/> :  (
     /*
@@ -233,7 +223,7 @@ weather:{
   },
   cardContainer: {
     marginTop:10,
-    marginLeft:10,
+    marginLeft:10
   },
   aboutButton: {
     backgroundColor:"pink",

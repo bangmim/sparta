@@ -233,7 +233,7 @@ weather:{
   },
   cardContainer: {
     marginTop:10,
-    marginLeft:10,
+    marginLeft:10
   },
   aboutButton: {
     backgroundColor:"pink",
