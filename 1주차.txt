@@ -1,0 +1,67 @@
+<APP>
+# 리스트에 요소 넣기 (마지막에 들어간다)
+.push();
+
+#문자열을 나누고 싶은 경우
+//문자열을 나누어 리스트로 만들어준다.
+.split()
+
+#함수 선언 방식
+(1)
+function (){}
+
+(2) --리터럴 방식
+let a = function(){
+
+}
+a();
+
+(3)--화살표 방식
+let a = () =>{
+
+}
+a();
+----------------------
+#0329
+
+// 앱개발에 자주 쓰이는 Javascript
+#딕셔너리 키와 값을 빠르게 꺼내기! -- 비구조 할당 
+//객체
+let blog={
+    owner : "noah",
+    url:"noahlogs.tistory.com",
+    getPost(){
+        console.log("ES6 문법 정리!");
+    }
+};
+
+let { owner, getPost} = blog;
+// 각각 blog 객체의 owner, getPost()의 데이터가 
+blog의 키 값과 이름이 같아야 한다.
+
+// 앞으로 리액트 네이티브 앱을 만들며 가장 많이 사용할 방식!
+let blogFunction = ({owner, url, getPost}) =>{
+    console.log(owner);
+    console.log(url);
+    console.log(getPost);
+}
+
+blogFunction(blog)
+
+----------------------
+#0330
+let name="스파르타"
+let job="developer"
+
+// key와 value 값이 같으면 key값만 적어줘도 된다.
+let user={
+    name,
+    job
+}
+
+// 코드 간결(축약) >> 속도 개선
+
+# map()
+리스트의 길이값을 몰라도 되며 for와는 반대로 몇 번째에 있는 값인지 
+순서를 알려준다.
+ 
